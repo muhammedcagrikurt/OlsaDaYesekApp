@@ -60,9 +60,18 @@ public class SepetYemekAdapter extends RecyclerView.Adapter<SepetYemekAdapter.Ca
         Glide.with(context).load(url).override(300,300).into(cardSepetBinding.imageViewSepet);
 
         cardSepetBinding.buttonSil.setOnClickListener(view -> {
+            deleteItem(position);
             viewModel.sepetYemekSil(Integer.parseInt(sepetYemek.getSepet_yemek_id()), sepetYemek.getKullanici_adi());
+
+
         });
     }
+    // Bu kod, recyler viewdeki verileri silmek için adapter sınıfında tanımlanmış bir örnek silme metodudur.
+    public void deleteItem(int position) {
+        sepetYemekListesi.remove(position);
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getItemCount() {

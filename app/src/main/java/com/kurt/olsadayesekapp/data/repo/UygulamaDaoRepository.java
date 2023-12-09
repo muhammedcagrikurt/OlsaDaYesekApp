@@ -11,6 +11,7 @@ import com.kurt.olsadayesekapp.data.entity.Yemek;
 import com.kurt.olsadayesekapp.data.entity.Yemekler;
 import com.kurt.olsadayesekapp.retrofit.UygulamaDao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -38,6 +39,33 @@ public class UygulamaDaoRepository {
             @Override
             public void onFailure(Call<Yemekler> call, Throwable t) {
                 Log.e("Dao","yemekGetir başarısız");
+            }
+        });
+    }
+
+    public void yemekAraGetir(String arananYemekAdi){
+        String arananYemekAdiLower=arananYemekAdi.toLowerCase();
+        uygulamaDao.yemekGetir().enqueue(new Callback<Yemekler>() {
+
+            @Override
+            public void onResponse(Call<Yemekler> call, Response<Yemekler> response) {
+                Log.e("Dao","yemekAraGetir başarılı");
+                List<Yemek> gelenYemek = response.body().getYemekList();
+                List<Yemek> arananYemek = new ArrayList<>();
+                for (Yemek yemek:gelenYemek) {
+                    if (yemek !=null){
+                        if (yemek.getYemek_adi().toLowerCase().contains(arananYemekAdiLower)){
+                            arananYemek.add(yemek);
+                        }
+                    }
+
+                }
+                yemekListesi.setValue(arananYemek);
+            }
+
+            @Override
+            public void onFailure(Call<Yemekler> call, Throwable t) {
+                Log.e("Dao","yemekAraGetir başarısız");
             }
         });
     }
@@ -83,7 +111,6 @@ public class UygulamaDaoRepository {
             public void onFailure(Call<SepetYemekler> call, Throwable t) {
                 Log.e("Dao","sepetYemekGetir başarısız");
                 Log.e("Dao",t.getMessage());
-                Log.e("Dao",t.getLocalizedMessage());
 
             }
         });

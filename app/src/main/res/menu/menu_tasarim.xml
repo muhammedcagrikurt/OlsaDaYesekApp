@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/profilFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/account_box_24"
+        android:title="Profil" />
+    <item
+        android:id="@+id/anasayfaFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/home_24"
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/sepetFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:icon="@drawable/baseline_soup_kitchen_24"
+        android:title="Sepet"></item>
+</menu>

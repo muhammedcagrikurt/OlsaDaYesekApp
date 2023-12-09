@@ -54,9 +54,9 @@ public class YemekAdapter extends RecyclerView.Adapter<YemekAdapter.CardYemekHol
         cardYemekBinding.textViewYemekAdi.setText(yemek.getYemek_adi());
         cardYemekBinding.textViewYemekFiyat.setText(yemek.getYemek_fiyat());
         String url = "http://kasimadalan.pe.hu/yemekler/resimler/"+yemek.getYemek_resim_adi();
-        Glide.with(context).load(url).override(300,300).into(cardYemekBinding.imageViewYemek);
+        Glide.with(context).load(url).override(500,500).into(cardYemekBinding.imageViewYemek);
 
-        cardYemekBinding.imageViewYemek.setOnClickListener(view -> {
+        cardYemekBinding.yemekCardView.setOnClickListener(view -> {
             AnasayfaFragmentDirections.AnasayfaDetayGecis detayGecis = AnasayfaFragmentDirections.anasayfaDetayGecis(yemek);
             Navigation.findNavController(view).navigate(detayGecis);
         });

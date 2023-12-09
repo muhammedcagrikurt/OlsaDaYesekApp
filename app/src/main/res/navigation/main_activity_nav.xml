@@ -31,4 +31,9 @@
         android:name="com.kurt.olsadayesekapp.ui.fragment.SepetFragment"
         android:label="fragment_sepet"
         tools:layout="@layout/fragment_sepet" />
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.kurt.olsadayesekapp.ui.fragment.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
 </navigation>
