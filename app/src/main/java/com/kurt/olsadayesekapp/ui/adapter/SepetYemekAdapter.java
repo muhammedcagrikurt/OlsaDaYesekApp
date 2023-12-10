@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.snackbar.Snackbar;
 import com.kurt.olsadayesekapp.data.entity.SepetYemek;
 import com.kurt.olsadayesekapp.databinding.CardSepetBinding;
 import com.kurt.olsadayesekapp.ui.viewmodel.SepetViewModel;
@@ -52,8 +53,8 @@ public class SepetYemekAdapter extends RecyclerView.Adapter<SepetYemekAdapter.Ca
         CardSepetBinding cardSepetBinding = holder.cardSepetBinding;
 
         cardSepetBinding.textViewYemekAdiSepet.setText(sepetYemek.getYemek_adi());
-        cardSepetBinding.textViewYemekFiyatSepet.setText(sepetYemek.getYemek_fiyat());
-        cardSepetBinding.textViewYemekSiparisAdetSepet.setText(sepetYemek.getYemek_siparis_adet());
+        cardSepetBinding.textViewYemekFiyatSepet.setText(sepetYemek.getYemek_fiyat()+" ₺");
+        cardSepetBinding.textViewYemekSiparisAdetSepet.setText(sepetYemek.getYemek_siparis_adet()+" adet");
 
 
         String url = "http://kasimadalan.pe.hu/yemekler/resimler/"+sepetYemek.getYemek_resim_adi();
@@ -62,7 +63,7 @@ public class SepetYemekAdapter extends RecyclerView.Adapter<SepetYemekAdapter.Ca
         cardSepetBinding.buttonSil.setOnClickListener(view -> {
             deleteItem(position);
             viewModel.sepetYemekSil(Integer.parseInt(sepetYemek.getSepet_yemek_id()), sepetYemek.getKullanici_adi());
-
+            Snackbar.make(view,sepetYemek.getYemek_adi()+" Sepeten Silindi",Snackbar.LENGTH_SHORT).show();
 
         });
     }

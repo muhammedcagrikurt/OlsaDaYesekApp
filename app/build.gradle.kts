@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("androidx.navigation.safeargs")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -59,4 +60,7 @@ dependencies {
 
 
     implementation ("com.airbnb.android:lottie:6.2.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-auth")
+
 }

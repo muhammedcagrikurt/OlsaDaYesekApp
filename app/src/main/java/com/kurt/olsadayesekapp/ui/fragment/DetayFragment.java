@@ -46,7 +46,7 @@ public class DetayFragment extends Fragment {
         String url = "http://kasimadalan.pe.hu/yemekler/resimler/"+gelenyemek.getYemek_resim_adi();
         Glide.with(this).load(url).override(950,950).into(binding.imageViewYemekDetay);
         binding.textViewYemekAdiDetay.setText(gelenyemek.getYemek_adi());
-        binding.textViewYemekFiyatDetay.setText(gelenyemek.getYemek_fiyat());
+        binding.textViewYemekFiyatDetay.setText(gelenyemek.getYemek_fiyat()+" ₺");
         binding.textFieldAdet.getEditText().setText("1");
 
         binding.imageViewAdd.setOnClickListener(view -> {

@@ -40,9 +40,7 @@ public class SepetFragment extends Fragment {
                              Bundle savedInstanceState) {
         Log.e("sonuc","SepetFragment başarılı");
 
-
         binding=FragmentSepetBinding.inflate(inflater,container,false);
-
 
 
         binding.recyclerViewSepet.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -60,7 +58,13 @@ public class SepetFragment extends Fragment {
                 binding.buttonAlisverisiTamamla.setText("Sepet Boş");
 
             });
+            if (sepetYemekListesi.size()<1){
+               binding.animationView.setVisibility(View.VISIBLE);
 
+            }
+            else {
+                binding.animationView.setVisibility(View.GONE);
+            }
         });
 
         binding.imageView.setOnClickListener(view -> {

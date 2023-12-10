@@ -28,7 +28,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/kalam"
                 android:text="TextView"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageViewSepet"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,17 +40,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/kalam"
                 android:text="TextView"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/buttonSil"
-                android:layout_width="99dp"
-                android:layout_height="43dp"
+                android:layout_width="74dp"
+                android:layout_height="39dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/kalam_bold"
                 android:text="Sil"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -58,7 +64,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/kalam"
                 android:text="TextView"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/imageViewSepet"
                 app:layout_constraintTop_toBottomOf="@+id/textViewYemekAdiSepet" />
         </androidx.constraintlayout.widget.ConstraintLayout>

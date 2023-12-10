@@ -6,10 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.ProfilFragment" >
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="9dp"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/textFieldSifre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/animationView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="155dp"
+            android:layout_height="55dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldSifre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="22dp"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginOrCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFieldEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="155dp"
+            android:layout_height="55dp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="246dp"
-        android:layout_height="371dp"
+        android:layout_width="209dp"
+        android:layout_height="314dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -20,13 +68,41 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/animation1" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView2"
+        android:layout_width="391dp"
+        android:layout_height="513dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.382"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/animation1" />
+
+    <Button
+        android:id="@+id/buttonLoginOrCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="27dp"
-        android:text="TextView"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="17dp"
+        android:fontFamily="@font/kalam_bold"
+        android:text="Giriş Yap"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animationView" />
+        app:layout_constraintTop_toBottomOf="@+id/textFieldSifre" />
+
+    <TextView
+        android:id="@+id/textViewCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/kalam_bold"
+        android:text="Hesabın yok mu?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
