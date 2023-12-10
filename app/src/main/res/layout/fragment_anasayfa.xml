@@ -48,6 +48,7 @@
         android:fontFamily="@font/kalam_bold"
         android:text="Olsada Yesek"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent"

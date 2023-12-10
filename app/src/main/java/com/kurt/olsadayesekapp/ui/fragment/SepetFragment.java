@@ -41,7 +41,8 @@ public class SepetFragment extends Fragment {
         Log.e("sonuc","SepetFragment başarılı");
 
         binding=FragmentSepetBinding.inflate(inflater,container,false);
-
+        binding.animationView3.setVisibility(View.GONE);
+        binding.textView6.setVisibility(View.GONE);
 
         binding.recyclerViewSepet.setLayoutManager(new LinearLayoutManager(requireContext()));
         viewModel.sepetYemekListesi.observe(getViewLifecycleOwner(),sepetYemekListesi -> {
@@ -56,6 +57,8 @@ public class SepetFragment extends Fragment {
                 sepetYemekListesi.clear();
                 sepetYemekAdapter.notifyDataSetChanged();
                 binding.buttonAlisverisiTamamla.setText("Sepet Boş");
+                binding.animationView3.setVisibility(View.VISIBLE);
+                binding.textView6.setVisibility(View.VISIBLE);
 
             });
             if (sepetYemekListesi.size()<1){

@@ -46,7 +46,7 @@ public class ProfilFragment extends Fragment {
                 createUser[0] =!createUser[0];}
             else {
                 binding.buttonLoginOrCreate.setText("Giriş Yap");
-                binding.textViewCreate.setText("Hesabın yok mu?");
+                binding.textViewCreate.setText("Hesabın yok mu? Hemen Oluştur");
                 createUser[0] =!createUser[0];
             }
         });

@@ -8,10 +8,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textFieldEmail"
+        android:hint="Email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="138dp"
         android:layout_marginBottom="9dp"
         app:errorEnabled="true"
@@ -35,9 +36,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="9dp"
         android:layout_marginEnd="138dp"
         android:layout_marginBottom="22dp"
+        android:hint="Şifre"
+        app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:helperTextEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/buttonLoginOrCreate"
@@ -48,6 +50,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="155dp"
             android:layout_height="55dp"
+            android:inputType="textPassword"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textStyle="bold" />
@@ -56,17 +59,15 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="209dp"
-        android:layout_height="314dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="378dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/animation1" />
+        app:lottie_rawRes="@raw/animation_login" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView2"
@@ -88,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="118dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/kalam_bold"
         android:text="Giriş Yap"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,10 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="118dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/kalam_bold"
         android:text="Hesabın yok mu?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLoginOrCreate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
