@@ -70,6 +70,8 @@ public class SepetYemekAdapter extends RecyclerView.Adapter<SepetYemekAdapter.Ca
     // Bu kod, recyler viewdeki verileri silmek için adapter sınıfında tanımlanmış bir örnek silme metodudur.
     public void deleteItem(int position) {
         sepetYemekListesi.remove(position);
+        notifyItemChanged(position);
+        notifyItemRangeChanged(position, sepetYemekListesi.size());
         notifyDataSetChanged();
     }
 

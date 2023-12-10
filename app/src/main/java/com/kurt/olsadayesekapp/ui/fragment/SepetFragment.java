@@ -44,12 +44,15 @@ public class SepetFragment extends Fragment {
         binding.animationView3.setVisibility(View.GONE);
         binding.textView6.setVisibility(View.GONE);
 
+
+
         binding.recyclerViewSepet.setLayoutManager(new LinearLayoutManager(requireContext()));
         viewModel.sepetYemekListesi.observe(getViewLifecycleOwner(),sepetYemekListesi -> {
             SepetYemekAdapter sepetYemekAdapter = new SepetYemekAdapter(sepetYemekListesi,requireContext(),viewModel);
 
+
             binding.recyclerViewSepet.setAdapter(sepetYemekAdapter);
-            binding.buttonAlisverisiTamamla.setText("Alışverişi Tamamla ("+sepetYemekListesi.size()+" ürün)");
+
             binding.buttonAlisverisiTamamla.setOnClickListener(view -> {
                 for (SepetYemek sepetYemek:sepetYemekListesi) {
                     viewModel.sepetYemekSil(Integer.parseInt(sepetYemek.getSepet_yemek_id()), sepetYemek.getKullanici_adi());
@@ -61,13 +64,16 @@ public class SepetFragment extends Fragment {
                 binding.textView6.setVisibility(View.VISIBLE);
 
             });
-            if (sepetYemekListesi.size()<1){
-               binding.animationView.setVisibility(View.VISIBLE);
 
+            if(sepetYemekListesi.size()>0){
+                binding.animationView.setVisibility(View.GONE);
+                binding.buttonAlisverisiTamamla.setText("Alışverişi Tamamla ("+sepetYemekListesi.size()+" ürün)");
             }
             else {
-                binding.animationView.setVisibility(View.GONE);
+                binding.animationView.setVisibility(View.VISIBLE);
+                binding.buttonAlisverisiTamamla.setText("Sepet Boş");
             }
+
         });
 
         binding.imageView.setOnClickListener(view -> {

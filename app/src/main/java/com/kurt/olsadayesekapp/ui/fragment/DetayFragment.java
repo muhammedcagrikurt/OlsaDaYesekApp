@@ -58,12 +58,12 @@ public class DetayFragment extends Fragment {
         });
         binding.imageViewRemove.setOnClickListener(view -> {
             int adet =Integer.parseInt(binding.textFieldAdet.getEditText().getText().toString());
-            if(adet>0){ // 1 de yapılabilinir
+            if(adet>1){ // 1 de yapılabilinir
 
                 binding.textFieldAdet.getEditText().setText(""+(adet-1));
             }
             else{
-                binding.textFieldAdet.setError("Adet eksi olamaz");
+                binding.textFieldAdet.setError("Adet daha az olamaz");
             }
 
 
